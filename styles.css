@@ -1,0 +1,394 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  background-color: black;
+}
+/* Style navbar */
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: auto;
+  z-index: 100;
+}
+nav .logo {
+  color: red;
+  font-weight: bold;
+  line-height: 60px;
+  padding: 0 50px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 60px;
+}
+nav ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+
+.navbar {
+  z-index: 999;
+  right: 0;
+}
+
+.logo {
+  z-index: 999;
+  left: 0px;
+}
+
+/* style movie containers */
+#homeNowPlayingMovies,
+#popularMovies,
+#topRatedMovies,
+#upcomingMovies {
+  margin-top: 100px;
+}
+#homeMoviesContainer,
+#popularMoviesContainer,
+#topRatedContainer,
+#upcomingContainer {
+  display: grid;
+  text-align: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#homeMovieTitle,
+#popularTitle,
+#topRatedTitle,
+#upcomingTitle {
+  margin-left: 30px;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+/* style modal box */
+#modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  z-index: 100;
+  color: white;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+#modal-content {
+  background-color: black;
+  width: 800px;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 200px;
+}
+#modalTitle{
+  text-align: left;
+}
+
+.modal-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.modalImg{
+  cursor: pointer;
+}
+
+.modalDetails{
+  display: flex;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#modalRating{
+  margin-top:10px;
+  margin-right:5px;
+}
+#modalPlot{
+  text-align: left;
+  margin-bottom:20px;
+}
+#modalGenre{
+  text-align: left;
+  margin-right: 50px;
+}
+#modalDate{
+  text-align: left;
+  margin-right: 50px;
+}
+#modalCast{
+  text-align: left;
+}
+#modalShowtime{
+  margin-bottom: 20px;
+  background-color:red;
+  outline:none;
+  border:none;
+  color:white;
+  cursor:pointer;
+  width: 150px;
+  font-size: 15px;
+  height: 30px;
+}
+#close-btn {
+  position: absolute;
+  top: 0;
+  color: white;
+  right: 0;
+  padding-right: 5px;
+  outline: none;
+  border: none;
+  background:none;
+  cursor: pointer;
+  margin-top: 5px;
+  font-weight: bold;
+  
+}
+iframe {
+  justify-content: center;
+  width: 800px;
+}
+
+/* Styling Load More Movies Button */
+#loadMoviesContainer {
+  text-align: center;
+  margin-bottom: 50px;
+}
+#loadBtn {
+  width: 200px;
+  height: 40px;
+  color:white;
+  cursor:pointer;
+  background:red;
+  outline:none;
+  border:none;
+  font-size:20px;
+}
+
+/* styling home page hero */
+#landingHero {
+  margin-top: 80px;
+  width: 100%;
+  height: 700px;
+  background-position: center center;
+  background-image: url("images/landing1.jpg");
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.heroContainer{
+  margin-left:50px;
+  height:700px;
+  margin-top:300px;
+  background-color: transparent !important;
+ 
+}
+#hero-title{
+  font-size: 80px;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+}
+
+#hero-blurb{
+  font-size: 20px;
+}
+
+#exploreBtn{
+  outline:none;
+  border:none;
+  color:white;
+  cursor:pointer;
+  background-color: red;
+  margin-top:50px;
+  margin-bottom: 200px;
+  font-size: 30px;
+  width: 300px;
+  border-radius: 20px;
+  height: 40px;
+}
+
+
+/* styling the view more buttons */
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#popularviewBtn {
+  margin-top: 20px;
+  margin-right: 40px;
+  color: red;
+  outline: none;
+  border: none;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#topviewBtn {
+  margin-bottom: 70px;
+  margin-right: 40px;
+  color: red;
+  outline: none;
+  border: none;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#upcomingviewBtn {
+  margin-bottom: 50px;
+  margin-right: 40px;
+  color: red;
+  outline: none;
+  border: none;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+/* Styling the Showtimes Tab */
+#showtimesSearch{
+  margin-top:100px;
+  margin-left:50px;
+}
+
+#showtimesSearch h3{
+  margin-bottom:50px;
+  font-size: 50px;
+}
+
+#searchshowtimes{
+  width: 60%;
+  font-size:20px;
+  height:30px;
+  outline:none;
+  border-left:none;
+  border-right:none;
+  border-top:none;
+  border-bottom: 1px solid white;
+}
+
+::placeholder{
+  font-size: 20px;
+}
+
+
+#showtimesContainer{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left:50px;
+  margin-top:100px;
+}
+
+#theatres{
+  border-right: 1px solid white;
+}
+
+#theater{
+  margin-bottom: 100px;
+}
+
+#theaterName{
+  font-size:40px;
+  font-weight:bold;
+  margin-bottom:5px;
+}
+
+#theaterAddress{
+  font-size:20px;
+  margin-bottom:20px;
+}
+
+#showtimesBtn{
+  background-color:red;
+  outline:none;
+  border:none;
+  color:white;
+  cursor:pointer;
+  font-size:15px;
+  height:30px;
+  width:130px;
+}
+
+#map img{
+  width: 700px;
+  margin-left: 50px;
+  justify-content: center;
+  height:400px;
+  text-align: center;
+}
+
+/* Styling changes for showtimes redirect page */
+#showtimesDisplay{
+  margin-top:100px;
+  margin-left:50px;
+  
+}
+#showtimesDisplay h3{
+  font-size: 50px;
+  text-align: left;
+}
+
+#showtimesContainerList{
+  margin-bottom:100px;
+}
+#showtimeMovie{
+  display:grid;
+  margin-top: 100px;
+  text-align: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+#moviePoster img{
+  width: 600px;
+  height: 300px;
+}
+#moviePoster{
+  margin-left: 50px;
+}
+
+#movieTitle{
+  font-size: 30px;
+  text-align: left;
+}
+
+#times{
+  float:left;
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 150px;
+  height: 30px;
+  cursor:pointer;
+  font-size: 20px;
+  margin-right: 50px;
+  margin-top:30px;
+}
+
+hr{
+  margin-top: 20px;
+  margin-left: 50px;
+  width:90%;
+}

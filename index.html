@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieTime</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <label class="logo">Movie Time</label>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="showtimes.html">Showtimes</a></li>
+        </ul>
+    </nav>
+    <div id="landingHero">
+        <div class="heroContainer">
+            <h1 id="hero-title"> MovieTime</h1>
+            <h4 id="hero-blurb">A movie info application where you can view movie details and search showtimes</h4>
+            <button id="exploreBtn"  onclick="location.href='movies.html'">Explore Movies</button>
+        </div>
+       
+       
+    </div>
+    <div id="homeNowPlayingMovies">
+        <h3 id="homeMovieTitle">Now Playing </h3>
+        <div id="homeMoviesContainer"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</html>

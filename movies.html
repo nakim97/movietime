@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieTime</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <label class="logo">Movie Time</label>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="showtimes.html">Showtimes</a></li>
+        </ul>
+    </nav>
+
+    <div id="popularMovies">
+        <div class="container">
+            <h3 id="popularTitle">Popular </h3> 
+            <span>
+                <button onclick="location.href='popularmovies.html'" id="popularviewBtn"> View More </button>
+            </span>
+        </div>
+        <div id="popularMoviesContainer">
+        </div>
+    </div>
+   
+
+   
+    
+    <div id="topRatedMovies">
+        <div class="container">
+            <h3 id="topRatedTitle">Top Rated </h3>
+            <button onclick="location.href='topratedmovies.html'" id="topviewBtn" > View More</button>
+        </div>
+        <div id="topRatedContainer">
+        </div>
+    </div>
+
+
+    
+    <div id="upcomingMovies">
+        <div class="container">
+            <h3 id="upcomingTitle">Upcoming </h3>
+            <button onclick="location.href='upcomingmovies.html'" id="upcomingviewBtn"> View More</button>
+        </div>
+        <div id="upcomingContainer">
+        </div>
+      
+    </div>
+    
+
+
+
+    
+    <script src="scripts.js"></script>
+</html>
