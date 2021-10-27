@@ -427,3 +427,11 @@ hr{
   margin-bottom:100px;
   margin-left: 50px;
 }
+#closeSearch{
+  float:right;
+  cursor:pointer;
+  margin-right:40px;
+  margin-top: 10px;
+  font-weight:bold;
+  font-size: 30px;
+}

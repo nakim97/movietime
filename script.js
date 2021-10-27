@@ -84,6 +84,7 @@ document.getElementById("searchbar").addEventListener("keyup",function(e){
         const query = document.getElementById("searchbar").value;
         const searchContainer = document.getElementById("searchResults");
         const searchDiv = document.getElementById("searchContainer");
+        const closeSearch = document.getElementById("closeSearch");
 
         async function searchMovies(){
         const responses = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}&page=${page}`);
@@ -107,6 +108,10 @@ document.getElementById("searchbar").addEventListener("keyup",function(e){
         
     `,
     ); 
+    closeSearch.addEventListener("click",function(){
+        homeHero.style.display ="block";
+        searchDiv.style.display = "none";
+    })
         
     }
     loadBtn.addEventListener("click", function(){
@@ -116,7 +121,10 @@ document.getElementById("searchbar").addEventListener("keyup",function(e){
         }
         loadMore();
     })
+
+    
     searchMovies();
+    document.getElementById("searchbar").value = "";
        
     }
     

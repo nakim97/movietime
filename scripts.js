@@ -114,16 +114,17 @@ document.getElementById("searchbar").addEventListener("keyup",function(e){
         const query = document.getElementById("searchbar").value;
         const searchContainer = document.getElementById("searchResults");
         const searchDiv = document.getElementById("searchContainer");
+        const closeSearch = document.getElementById("closeSearch");
 
         async function searchMovies(){
         const responses = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}&page=${page}`);
         const json= await responses.json();
         console.log(json);
 
-        const popular = document.getElementById("movieContainer");
+        const searchDisplay = document.getElementById("movieContainer");
      
         
-        popular.style.display="none";
+        searchDisplay.style.display="none";
      
         
         searchContainer.innerHTML = "";
@@ -141,10 +142,15 @@ document.getElementById("searchbar").addEventListener("keyup",function(e){
         
     `,
     ); 
+    closeSearch.addEventListener("click",function(){
+        searchDisplay.style.display ="block";
+        searchDiv.style.display = "none";
+    })
         
     }
    
     searchMovies();
+    document.getElementById("searchbar").value = "";
        
     }
     
