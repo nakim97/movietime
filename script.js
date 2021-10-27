@@ -1,5 +1,4 @@
-const api_url = 'https://api.themoviedb.org/3'
-const api_key = '831004296f374b1a0723bb4e809b453a'
+const api_key = 'ee04596001b19a1964b017c76bc5d185'
 let page = 1
 
 const nowPlaying = document.getElementById('homeMoviesContainer');

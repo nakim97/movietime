@@ -19,6 +19,7 @@ nav .logo {
   color: red;
   font-weight: bold;
   line-height: 60px;
+  float:left;
   padding: 0 50px;
   font-size: 20px;
   text-transform: uppercase;
@@ -38,18 +39,35 @@ nav ul li {
 }
 
 nav ul {
-  float: right;
+  float: left;
   margin-right: 20px;
 }
 
 .navbar {
   z-index: 999;
-  right: 0;
+
 }
 
+.navbar  ::placeholder{
+  font-size: 14px !important;
+}
+
+#searchbar{
+  margin-top: 15px;
+  line-height: 0px;
+  position:absolute;
+  outline:none;
+  right:0;
+  font-size: 15px;
+  width: 200px;
+  margin-right: 40px;
+  height:35px;
+}
 .logo {
   z-index: 999;
+  margin-left: -20px;
   left: 0px;
+  font-size:30px !important;
 }
 
 /* style movie containers */
