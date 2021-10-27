@@ -9,8 +9,9 @@
 </head>
 <body>
     <nav>
-        <label class="logo">Movie Time</label>
+        <label class="logo" onclick="location.href='index.html'">MovieTime</label>
         <ul class="navbar">
+            <input type="text"  id="searchbar" onkeyup="" placeholder="Search for movies...">
             <li><a href="index.html">Home</a></li>
             <li><a href="movies.html">Movies</a></li>
             <li><a href="showtimes.html">Showtimes</a></li>
@@ -23,12 +24,16 @@
             <button id="exploreBtn"  onclick="location.href='movies.html'">Explore Movies</button>
         </div>
        
-       
-    </div>
-    <div id="homeNowPlayingMovies">
-        <h3 id="homeMovieTitle">Now Playing </h3>
-        <div id="homeMoviesContainer"></div>
     </div>
     
+    <div id="searchContainer">
+        <h3 id='searchTitle'>Search Results</h3>
+        <div id="searchResults"></div>
+        <div id="loadMoviesContainer" >
+            <button id="loadBtn"> Load More </button>
+    </div>
+    </div>
+
+      
     <script src="script.js"></script>
 </html>

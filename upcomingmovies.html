@@ -9,22 +9,34 @@
 </head>
 <body>
     <nav>
-        <label class="logo">Movie Time</label>
+        <label class="logo">MovieTime</label>
         <ul class="navbar">
+            <input type="text"  id="searchbar" onkeyup="" placeholder="Search for movies...">
             <li><a href="index.html">Home</a></li>
             <li><a href="movies.html">Movies</a></li>
             <li><a href="showtimes.html">Showtimes</a></li>
         </ul>
     </nav>
     
-    <div id="upcomingMovies">
-        <h3 id="upcomingTitle">Upcoming Movies </h3>
-        <div id="upcomingContainer">
+    <div id="movieContainer">
+        <div id="upcomingMovies">
+            <h3 id="upcomingTitle">Upcoming Movies </h3>
+            <div id="upcomingContainer">
+            </div>
+        </div>
+       
+        <div id="loadMoviesContainer" >
+                <button id="loadBtn"> Load More </button>
         </div>
     </div>
    
-    <div id="loadMoviesContainer" >
+
+    <div id="searchContainer">
+        <h3 id='searchTitle'>Search Results</h3>
+        <div id="searchResults"></div>
+        <div id="loadMoviesContainer" >
             <button id="loadBtn"> Load More </button>
+    </div>
     </div>
    
     <script src="scripts.js"></script>

@@ -9,6 +9,8 @@ const upcomingMovieContainer = document.getElementById('upcomingContainer');
 const loadBtn = document.getElementById('loadBtn');
 const loadContainer = document.getElementById("loadContainer")
 
+const searchBar = document.getElementById("searchbar");
+
 
 // Fetch Popular Movies 
 async function popularMovies(){
@@ -105,6 +107,50 @@ async function movieDetails(id){
                 
 }
 
+
+document.getElementById("searchbar").addEventListener("keyup",function(e){
+    
+    if(e.key =="Enter"){
+        e.preventDefault();
+        const query = document.getElementById("searchbar").value;
+        const searchContainer = document.getElementById("searchResults");
+        const searchDiv = document.getElementById("searchContainer");
+
+        async function searchMovies(){
+        const responses = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}&page=${page}`);
+        const json= await responses.json();
+        console.log(json);
+
+        const popular = document.getElementById("movieContainer");
+     
+        
+        popular.style.display="none";
+     
+        
+        searchContainer.innerHTML = "";
+        query.innerHTML ="";
+     
+        searchDiv.style.display = "block";
+
+        json.results.map((result) =>
+        searchContainer.innerHTML += `
+        <div id="searchContainerDiv">
+            <div id="searchData" onclick=movieDetails(${result.id})>
+            <img src="https://image.tmdb.org/t/p/w400${result.poster_path}" style="margin-bottom: 50px"  id="${result.id}" class="modalImg"/>
+         </div>
+        </div>
+        
+    `,
+    ); 
+        
+    }
+   
+    searchMovies();
+       
+    }
+    
+})
+
 // Load More Popular Movies
 loadBtn.addEventListener("click", function(){
     async function loadMore(){
@@ -112,6 +158,7 @@ loadBtn.addEventListener("click", function(){
         popularMovies();
         topMovies();
         upcomingMovies();
+        searchMovies();
     }
     loadMore();
 })
@@ -119,6 +166,5 @@ loadBtn.addEventListener("click", function(){
 function closeModal(){
     document.getElementById('modal').style.display='none';
 }
-
 
 

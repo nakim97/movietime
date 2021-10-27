@@ -1,8 +1,13 @@
 const api_url = 'https://api.themoviedb.org/3'
 const api_key = '831004296f374b1a0723bb4e809b453a'
-const page = 1
+let page = 1
 
 const nowPlaying = document.getElementById('homeMoviesContainer');
+
+const searchBar = document.getElementById("searchbar");
+
+const loadBtn = document.getElementById('loadBtn');
+const loadContainer = document.getElementById("loadContainer")
 
 
 async function getMovies(){
@@ -71,4 +76,50 @@ window.onclick = function(event) {
     }
   }
 
+
+document.getElementById("searchbar").addEventListener("keyup",function(e){
+    
+    if(e.key =="Enter"){
+        e.preventDefault();
+        
+        const query = document.getElementById("searchbar").value;
+        const searchContainer = document.getElementById("searchResults");
+        const searchDiv = document.getElementById("searchContainer");
+
+        async function searchMovies(){
+        const responses = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}&page=${page}`);
+        const json= await responses.json();
+        console.log(json);
+
+        const homeHero = document.getElementById("landingHero");
+        homeHero.style.display="none";
+        searchContainer.innerHTML = "";
+        query.innerHTML ="";
+     
+        searchDiv.style.display = "block";
+
+        json.results.map((result) =>
+        searchContainer.innerHTML += `
+        <div id="searchContainerDiv">
+            <div id="searchData" onclick=movieDetails(${result.id})>
+            <img src="https://image.tmdb.org/t/p/w400${result.poster_path}" style="margin-bottom: 50px"  id="${result.id}" class="modalImg"/>
+         </div>
+        </div>
+        
+    `,
+    ); 
+        
+    }
+    loadBtn.addEventListener("click", function(){
+        async function loadMore(){
+            page ++;
+            searchMovies();
+        }
+        loadMore();
+    })
+    searchMovies();
+       
+    }
+    
+})
 
