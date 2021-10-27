@@ -106,7 +106,7 @@ async function movieDetails(id){
                 
 }
 
-
+// Implement search bar 
 document.getElementById("searchbar").addEventListener("keyup",function(e){
     
     if(e.key =="Enter"){
@@ -173,3 +173,11 @@ function closeModal(){
 }
 
 
+// search bar for showtimes page
+document.getElementById("searchshowtimes").addEventListener("keyup",function(e){
+    if(e.key =="Enter"){
+        e.preventDefault();
+        document.getElementById("theatres").style.display="block";
+        document.getElementById("map").style.display="block";
+    }
+})
