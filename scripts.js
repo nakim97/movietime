@@ -100,60 +100,59 @@ async function movieDetails(id){
                 
                 </div>
                 `
-                document.body.append(nowPlayingPopup );
+                document.body.append(nowPlayingPopup);
                 
                 
 }
 
+async function searchMovies(){
+    const query = document.getElementById("searchbar").value;
+    const searchContainer = document.getElementById("searchResults");
+    const searchDiv = document.getElementById("searchContainer");
+    const closeSearch = document.getElementById("closeSearch");
+    const responses = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}&page=${page}`);
+    const json= await responses.json();
+    console.log(json);
+
+    const searchDisplay = document.getElementById("movieContainer");
+ 
+    
+    searchDisplay.style.display="none";
+ 
+    
+    
+    query.innerHTML ="";
+ 
+    searchDiv.style.display = "block";
+
+    json.results.map((result) =>
+    searchContainer.innerHTML += `
+    <div id="searchContainerDiv">
+        <div id="searchData" onclick=movieDetails(${result.id})>
+        <img src="https://image.tmdb.org/t/p/w400${result.poster_path}" style="margin-bottom: 50px"  id="${result.id}" class="modalImg"/>
+     </div>
+    </div>
+    
+`,
+); 
+closeSearch.addEventListener("click",function(){
+    searchDisplay.style.display ="block";
+    searchDiv.style.display = "none";
+})
+    
+}
+
+
 // Implement search bar 
 document.getElementById("searchbar").addEventListener("keyup",function(e){
-    
     if(e.key =="Enter"){
         e.preventDefault();
-        const query = document.getElementById("searchbar").value;
-        const searchContainer = document.getElementById("searchResults");
-        const searchDiv = document.getElementById("searchContainer");
-        const closeSearch = document.getElementById("closeSearch");
-
-        async function searchMovies(){
-        const responses = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}&page=${page}`);
-        const json= await responses.json();
-        console.log(json);
-
-        const searchDisplay = document.getElementById("movieContainer");
-     
-        
-        searchDisplay.style.display="none";
-     
-        
-        searchContainer.innerHTML = "";
-        query.innerHTML ="";
-     
-        searchDiv.style.display = "block";
-
-        json.results.map((result) =>
-        searchContainer.innerHTML += `
-        <div id="searchContainerDiv">
-            <div id="searchData" onclick=movieDetails(${result.id})>
-            <img src="https://image.tmdb.org/t/p/w400${result.poster_path}" style="margin-bottom: 50px"  id="${result.id}" class="modalImg"/>
-         </div>
-        </div>
-        
-    `,
-    ); 
-    closeSearch.addEventListener("click",function(){
-        searchDisplay.style.display ="block";
-        searchDiv.style.display = "none";
-    })
+        document.getElementById("searchResults").innerHTML = "";
+        searchMovies();
         
     }
-   
-    searchMovies();
-    document.getElementById("searchbar").value = "";
-       
-    }
-    
 })
+
 
 // Load More Popular Movies
 loadBtn.addEventListener("click", function(){
@@ -163,6 +162,7 @@ loadBtn.addEventListener("click", function(){
         topMovies();
         upcomingMovies();
         searchMovies();
+       
     }
     loadMore();
 })
@@ -170,5 +170,3 @@ loadBtn.addEventListener("click", function(){
 function closeModal(){
     document.getElementById('modal').style.display='none';
 }
-
-

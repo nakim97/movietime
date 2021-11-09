@@ -92,7 +92,7 @@ document.getElementById("searchbar").addEventListener("keyup",function(e){
 
         const homeHero = document.getElementById("landingHero");
         homeHero.style.display="none";
-        searchContainer.innerHTML = "";
+        
         query.innerHTML ="";
      
         searchDiv.style.display = "block";
@@ -116,6 +116,7 @@ document.getElementById("searchbar").addEventListener("keyup",function(e){
     loadBtn.addEventListener("click", function(){
         async function loadMore(){
             page ++;
+            document.getElementById("searchResults").innerHTML = "";
             searchMovies();
         }
         loadMore();
