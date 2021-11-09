@@ -171,4 +171,11 @@ function closeModal(){
             modal[i].style.display = "none";
         }
 }
-               
+
+
+window.addEventListener('click', function(){
+    const modal = document.querySelectorAll("#modal");
+    for(var i=0; i < modal.length; i++){
+        modal[i].style.display = "none";
+    }
+})
