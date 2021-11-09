@@ -55,7 +55,6 @@ async function movieDetails(id){
                             
                         </div>
                         <p id="modalPlot">${json.overview}</p>
-                        <button id="modalShowtime"  onclick="location.href='showtimes.html'"> SHOWTIMES </button>
                         </div>
                        
                     </div>

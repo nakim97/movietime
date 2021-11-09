@@ -96,7 +96,6 @@ async function movieDetails(id){
 
                     </div>
                     <p id="modalPlot">${json.overview}</p>
-                    <button id="modalShowtime"  onclick="location.href='showtimes.html'"> SHOWTIMES </button>
                     </div>
                 
                 </div>
@@ -173,11 +172,3 @@ function closeModal(){
 }
 
 
-// search bar for showtimes page
-document.getElementById("searchshowtimes").addEventListener("keyup",function(e){
-    if(e.key =="Enter"){
-        e.preventDefault();
-        document.getElementById("theatres").style.display="block";
-        document.getElementById("map").style.display="block";
-    }
-})

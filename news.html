@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieTime</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="#">
 </head>
 <body>
     <nav>
@@ -17,24 +18,12 @@
             <li><a href="news.html">News</a></li>
         </ul>
     </nav>
-    <div id="landingHero">
-        <div class="heroContainer">
-            <h1 id="hero-title"> MovieTime</h1>
-            <h4 id="hero-blurb">A movie info application where you can view movie details and view the latest movie news</h4>
-            <button id="exploreBtn"  onclick="location.href='movies.html'">Explore Movies</button>
-        </div>
-       
-    </div>
-    
-    <div id="searchContainer">
-        <span id="closeSearch" ">X</span>
-        <h3 id='searchTitle' >Search Results</h3>
-        <div id="searchResults"></div>
-        <div id="loadMoviesContainer" >
-            <button id="loadBtn"> Load More </button>
-    </div>
+
+    <div id = "newsContainer">
+        <h1 id="newsheadTitle"> Latest Movie News </h1>
+        <div id="newsData"></div>
     </div>
 
-      
-    <script src="script.js"></script>
+    <script src="microservice.js"></script>
+</body>
 </html>

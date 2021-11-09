@@ -359,57 +359,7 @@ iframe {
   text-align: center;
 }
 
-/* Styling changes for showtimes redirect page */
-#showtimesDisplay{
-  margin-top:100px;
-  margin-left:50px;
-  
-}
-#showtimesDisplay h3{
-  font-size: 50px;
-  text-align: left;
-}
 
-#showtimesContainerList{
-  margin-bottom:100px;
-}
-#showtimeMovie{
-  display:grid;
-  margin-top: 100px;
-  text-align: center;
-  grid-template-columns: 1fr 1fr;
-}
-
-#moviePoster img{
-  width: 600px;
-  height: 300px;
-}
-#moviePoster{
-  margin-left: 50px;
-}
-
-#movieTitle{
-  font-size: 30px;
-  text-align: left;
-}
-
-#times{
-  float:left;
-  border: 1px solid white;
-  border-radius: 20px;
-  width: 150px;
-  height: 30px;
-  cursor:pointer;
-  font-size: 20px;
-  margin-right: 50px;
-  margin-top:30px;
-}
-
-hr{
-  margin-top: 20px;
-  margin-left: 50px;
-  width:90%;
-}
 
 /* Styling the Search Bar and Displaying Search Results */
 #searchContainer{
@@ -444,6 +394,43 @@ hr{
   margin-bottom: -20px;
 }
 
-#theatres, #map{
-  display:none;
+/* Styling the Movie News Tab */
+#newsheadTitle{
+  margin-top:100px;
+  margin-left: 30px;
+  margin-bottom: 50px;
+}
+
+#newsData{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  position: absolute; 
+  width:100%;
+}
+#newsImg{
+  width: 300px;
+  height: 300px;
+  text-align: center;
+}
+#readMore{
+  color:red;
+  float:right;
+  margin-right: 10px;
+  cursor:pointer;
+}
+#newsTitle{
+  margin-bottom:10px;
+}
+#newsWriter{
+  margin-right: 50px;
+}
+#newsDate{
+  margin-right: 50px;
+}
+#newsBody{
+  margin-top:20px;
+}
+
+#newsContent{
+  margin-bottom: 50px;
 }
