@@ -15,7 +15,7 @@ const searchBar = document.getElementById("searchbar");
 async function popularMovies(){
     const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&page=${page}`);
     const jsonResponse = await response.json();
-    console.log(jsonResponse);
+    //console.log(jsonResponse);
     
     jsonResponse.results.map((result) =>
     popularMovieContainer.innerHTML += `
@@ -32,11 +32,11 @@ popularMovies();
 async function topMovies(){
     const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&page=${page}`);
     const jsonResponse = await response.json();
-    console.log(jsonResponse);
+    //console.log(jsonResponse);
 
     jsonResponse.results.map((result) =>
     topRatedMovieContainer.innerHTML += `
-    <div id="currentplayingMovies" onclick=movieDetails(${result.id})>
+    <div id="currentplayingMovies" onclick="movieDetails(${result.id})">
         <img src="https://image.tmdb.org/t/p/w400${result.poster_path}" style="margin-bottom: 50px"  id="${result.id}"/>
     </div>
     `,
@@ -50,7 +50,7 @@ topMovies();
 async function upcomingMovies(){
     const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&page=${page}`);
     const jsonResponse = await response.json();
-    console.log(jsonResponse);
+    //console.log(jsonResponse);
     
     jsonResponse.results.map((result) =>
     upcomingMovieContainer.innerHTML += `
@@ -69,17 +69,17 @@ async function movieDetails(id){
   
     const responses = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`);
     const json= await responses.json();
-    console.log(json);
+    //console.log(json);
 
     const trailer = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api_key}`);
     const jsonResponse = await trailer.json()
-    console.log(jsonResponse);
+    //console.log(jsonResponse);
 
     const cast = await fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${api_key}`);
     const castResponse = await cast.json()
-    console.log(castResponse);
+    //console.log(castResponse);
    
-    nowPlayingPopup = document.createElement("div");
+    const nowPlayingPopup = document.createElement("div");
     nowPlayingPopup.innerHTML =`
                     <div id="modal">
                     <div id="modal-content">
@@ -102,7 +102,7 @@ async function movieDetails(id){
                 `
                 document.body.append(nowPlayingPopup);
                 
-                
+               
 }
 
 async function searchMovies(){
@@ -112,15 +112,12 @@ async function searchMovies(){
     const closeSearch = document.getElementById("closeSearch");
     const responses = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}&page=${page}`);
     const json= await responses.json();
-    console.log(json);
+    //console.log(json);
 
     const searchDisplay = document.getElementById("movieContainer");
  
-    
     searchDisplay.style.display="none";
  
-    
-    
     query.innerHTML ="";
  
     searchDiv.style.display = "block";
@@ -167,6 +164,11 @@ loadBtn.addEventListener("click", function(){
     loadMore();
 })
 
+// Close Modal Box 
 function closeModal(){
-    document.getElementById('modal').style.display='none';
+    const modal = document.querySelectorAll("#modal");
+        for(var i=0; i < modal.length; i++){
+            modal[i].style.display = "none";
+        }
 }
+               
