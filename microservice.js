@@ -1,4 +1,6 @@
 const news = document.getElementById('newsData');
+
+// function to retrieve news data from teammate's microservice
 async function getMovieNews(){
     const response = await fetch(`http://localhost:5000/imdbnews`);
     const jsonResponse = await response.json();
@@ -7,7 +9,8 @@ async function getMovieNews(){
     jsonResponse.results.map((result) =>
     news.innerHTML += `
     <div id="newsdataContainer>
-    <div id="newsimgContainer>
+
+    <div id="newsimgContainer" style="text-align:center">
       <img src=${result.larger_img} id="newsImg">
     </div>
 
@@ -15,12 +18,10 @@ async function getMovieNews(){
       <h2 id="newsTitle">${result.title}</h2>
       <span id="newsWriter">${result.writer}</span>
       <span id="newsDate">${result.date}</span>
-      <span id="magazine">${result.magazine}</span>
       <p id="newsBody">${result.body}</p>
       <span id="readMore" onclick="location.href='${result.link}'";> Read More</span>
     </div>
-  
-     
+
     </div>
     `
     )
