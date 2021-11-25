@@ -6,7 +6,8 @@ const topRatedMovieContainer = document.getElementById('topRatedContainer');
 const upcomingMovieContainer = document.getElementById('upcomingContainer');
 
 const loadBtn = document.getElementById('loadBtn');
-const loadContainer = document.getElementById("loadContainer")
+const searchloadBtn = document.getElementById('searchloadBtn');
+const loadContainer = document.getElementById("loadContainer");
 
 const searchBar = document.getElementById("searchbar");
 
@@ -100,11 +101,10 @@ async function movieDetails(id){
                 
                 </div>
                 `
-                document.body.append(nowPlayingPopup);
-                
-               
+                document.body.append(nowPlayingPopup);     
 }
 
+// function to fetch search results of searched movies 
 async function searchMovies(){
     const query = document.getElementById("searchbar").value;
     const searchContainer = document.getElementById("searchResults");
@@ -132,11 +132,11 @@ async function searchMovies(){
     
 `,
 ); 
+// function to close modal box 
 closeSearch.addEventListener("click",function(){
     searchDisplay.style.display ="block";
     searchDiv.style.display = "none";
 })
-    
 }
 
 
@@ -146,22 +146,28 @@ document.getElementById("searchbar").addEventListener("keyup",function(e){
         e.preventDefault();
         document.getElementById("searchResults").innerHTML = "";
         searchMovies();
-        
     }
 })
 
 
-// Load More Popular Movies
+// Load More Movies Function 
 loadBtn.addEventListener("click", function(){
     async function loadMore(){
         page ++;
         popularMovies();
         topMovies();
         upcomingMovies();
-        searchMovies();
-       
     }
     loadMore();
+})
+
+// load More Movies in Search Results 
+searchloadBtn.addEventListener("click", function(){
+    async function loadMoreSearch(){
+        page++;
+        searchMovies();
+    }
+    loadMoreSearch();
 })
 
 // Close Modal Box 
@@ -172,7 +178,7 @@ function closeModal(){
         }
 }
 
-
+// Close Modal Box when clicking anywhere outside of modal box 
 window.addEventListener('click', function(){
     const modal = document.querySelectorAll("#modal");
     for(var i=0; i < modal.length; i++){

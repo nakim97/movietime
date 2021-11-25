@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieTime</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav>
         <label class="logo" onclick="location.href='index.html'">MovieTime</label>
         <ul class="navbar">
@@ -17,29 +19,28 @@
             <li><a href="news.html">News</a></li>
         </ul>
     </nav>
-    
+
+    <!-- Landing Page Container -->
     <div id="movieContainer">
         <div id="landingHero">
             <div class="heroContainer">
                 <h1 id="hero-title"> MovieTime</h1>
                 <h4 id="hero-blurb">A movie info application where you can view movie details and view the latest movie news</h4>
                 <button id="exploreBtn"  onclick="location.href='movies.html'">Explore Movies</button>
-            </div>
-           
+            </div>     
         </div>
     </div>
     
-    
-    
+    <!-- Search Results Container -->
     <div id="searchContainer">
         <span id="closeSearch" ">X</span>
         <h3 id='searchTitle' >Search Results</h3>
         <div id="searchResults"></div>
         <div id="loadMoviesContainer" >
-            <button id="loadBtn"> Load More </button>
-    </div>
+            <button id="searchloadBtn"> Load More </button>
+         </div>
     </div>
 
-      
-    <script src="scripts.js"></script>
+</body>
+<script src="scripts.js"></script>
 </html>

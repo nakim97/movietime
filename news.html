@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="#">
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav>
         <label class="logo" onclick="location.href='index.html'">MovieTime</label>
         <ul class="navbar">
@@ -18,24 +19,23 @@
             <li><a href="news.html">News</a></li>
         </ul>
     </nav>
-
+    <!-- Container to display current movie news -->
     <div id="movieContainer">
         <div id = "newsContainer">
             <h1 id="newsheadTitle"> Latest Movie News </h1>
             <div id="newsData"></div>
         </div>
-
     </div>
     
+    <!-- Container for search results -->
     <div id="searchContainer">
         <span id="closeSearch" ">X</span>
         <h3 id='searchTitle'>Search Results</h3>
         <div id="searchResults"></div>
         <div id="loadMoviesContainer" >
-            <button id="loadBtn"> Load More </button>
+            <button id="searchloadBtn"> Load More </button>
     </div>
     </div>
-
 
     <script src="microservice.js"></script>
     <script src="scripts.js"></script>

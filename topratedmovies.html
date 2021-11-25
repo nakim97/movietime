@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav>
         <label class="logo">MovieTime</label>
         <ul class="navbar">
@@ -18,6 +19,7 @@
         </ul>
     </nav>
 
+    <!-- Top Rated Movies Container -->
     <div id="movieContainer">
         <div id="topRatedMovies">
             <h3 id="topRatedTitle">Top Rated Movies </h3>
@@ -25,25 +27,22 @@
             </div>
         </div>
     
-       
+       <!-- Load More Top Rated Movies Container -->
         <div id="loadMoviesContainer" >
                 <button id="loadBtn"> Load More </button>
         </div>
-
     </div>
 
-    
-
+    <!-- Search Results Container -->
     <div id="searchContainer">
         <span id="closeSearch" ">X</span>
         <h3 id='searchTitle'>Search Results</h3>
         <div id="searchResults"></div>
         <div id="loadMoviesContainer" >
-            <button id="loadBtn"> Load More </button>
-    </div>
+            <button id="searchloadBtn"> Load More </button>
+        </div>
     </div>
 
-   
     <script src="scripts.js"></script>
 </body>
 </html>

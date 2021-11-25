@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav>
         <label class="logo">MovieTime</label>
         <ul class="navbar">
@@ -17,27 +18,30 @@
             <li><a href="news.html">News</a></li>
         </ul>
     </nav>
+
+    <!-- Popular Movies Container -->
     <div id="movieContainer">
         <div id="popularMovies">
             <h3 id="popularTitle">Popular Movies </h3> 
             <div id="popularMoviesContainer">
             </div>
         </div>
-    
+        
+        <!-- Load More Popular Movies Container -->
         <div id="loadMoviesContainer" >
                 <button id="loadBtn"> Load More </button>
         </div>
 
     </div>
     
-
+    <!-- Search Results Container -->
     <div id="searchContainer">
         <span id="closeSearch" ">X</span>
         <h3 id='searchTitle'>Search Results</h3>
         <div id="searchResults"></div>
         <div id="loadMoviesContainer" >
-            <button id="loadBtn"> Load More </button>
-    </div>
+            <button id="searchloadBtn"> Load More </button>
+        </div>
     </div>
    
     <script src="scripts.js"></script>
