@@ -16,7 +16,6 @@ const searchBar = document.getElementById("searchbar");
 async function popularMovies(){
     const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&page=${page}`);
     const jsonResponse = await response.json();
-    //console.log(jsonResponse);
     
     jsonResponse.results.map((result) =>
     popularMovieContainer.innerHTML += `
@@ -33,8 +32,7 @@ popularMovies();
 async function topMovies(){
     const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}&page=${page}`);
     const jsonResponse = await response.json();
-    //console.log(jsonResponse);
-
+  
     jsonResponse.results.map((result) =>
     topRatedMovieContainer.innerHTML += `
     <div id="currentplayingMovies" onclick="movieDetails(${result.id})">
@@ -51,7 +49,6 @@ topMovies();
 async function upcomingMovies(){
     const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&page=${page}`);
     const jsonResponse = await response.json();
-    //console.log(jsonResponse);
     
     jsonResponse.results.map((result) =>
     upcomingMovieContainer.innerHTML += `
@@ -70,15 +67,12 @@ async function movieDetails(id){
   
     const responses = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`);
     const json= await responses.json();
-    //console.log(json);
 
     const trailer = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api_key}`);
     const jsonResponse = await trailer.json()
-    //console.log(jsonResponse);
 
     const cast = await fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${api_key}`);
     const castResponse = await cast.json()
-    //console.log(castResponse);
    
     const nowPlayingPopup = document.createElement("div");
     nowPlayingPopup.innerHTML =`
@@ -112,7 +106,6 @@ async function searchMovies(){
     const closeSearch = document.getElementById("closeSearch");
     const responses = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}&page=${page}`);
     const json= await responses.json();
-    //console.log(json);
 
     const searchDisplay = document.getElementById("movieContainer");
  
@@ -139,7 +132,6 @@ closeSearch.addEventListener("click",function(){
 })
 }
 
-
 // Implement search bar 
 document.getElementById("searchbar").addEventListener("keyup",function(e){
     if(e.key =="Enter"){
@@ -148,7 +140,6 @@ document.getElementById("searchbar").addEventListener("keyup",function(e){
         searchMovies();
     }
 })
-
 
 // Load More Movies Function 
 loadBtn.addEventListener("click", function(){
