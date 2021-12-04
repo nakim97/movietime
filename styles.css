@@ -377,3 +377,9 @@ iframe {
 img{
   cursor:pointer;
 }
+
+#browseDescription{
+  margin-left: 35px;
+  margin-top:  30px;
+  font-size: 12px;
+}
